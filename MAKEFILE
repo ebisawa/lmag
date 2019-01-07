@@ -1,0 +1,21 @@
+
+AFLAGS	= -ml -m -zi -l
+CFLAGS	= -ms -v -M -1 -d -l3
+
+TARGET1	= lmag.exe
+OBJS1	= lmag.obj lmaga.obj
+
+all: $(TARGET1)
+
+$(TARGET1) : $(OBJS1)
+	$(CC) -e$(TARGET1) $(CFLAGS) $(OBJS1)
+
+depend:
+	mkdep -I$(INCLUDE) *.c
+
+# DO NOT DELETE THIS LINE -- mkdep uses it.
+# DO NOT PUT ANYTHING AFTER THIS LINE, IT WILL GO AWAY.
+
+lmag.obj: mag.h types.h
+
+# IF YOU PUT ANYTHING HERE IT WILL GO AWAY
